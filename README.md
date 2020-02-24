@@ -17,7 +17,7 @@ In the project directory, you can run:
 
 and then execute the following command to run the main app:
 
-### `npm serve`
+### `ng serve`
 
 and then execute the following command to run the maintenance panel app:
 
