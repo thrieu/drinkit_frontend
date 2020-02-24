@@ -1,0 +1,10 @@
+<div class="delivery-port-tile">
+  <form [formGroup]="portForm" (ngSubmit)="onSubmit(portForm.value)">
+    <div class="delivery-port-labels">
+      <div class="delivery-port-label" *ngFor="let additive of drink.additives">
+        <mat-slide-toggle formControlName="{{ additive.name }}" color="primary">{{ additive.name.toUpperCase() }}</mat-slide-toggle>
+      </div>
+    </div>
+    <button class="delivery-port-button" mat-fab color="primary" type="submit">{{ drink.name.toUpperCase() }}</button>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over" class="app-sidenav" color="primary">
+    <app-settings-panel></app-settings-panel>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button mat-button class="app-menu-button" (click)="sidenav.toggle()">
+      <i class="material-icons">menu</i>
+    </button>
+    <span class="title">{{ title }}</span>
+  </mat-toolbar>
+
+
+  <div class="app-content">
+    <div class="temperature">
+      <mat-icon class="example-icon">opacity</mat-icon>
+      Temperature {{ temperatureService.getTemperature() }}℃
+    </div>
+    <div class="delivery">
+      <div class="delivery-ports-container" *ngFor="let drink of drinks">
+        <app-stock-indicator [drink]="drink"></app-stock-indicator>
+        <app-delivery-port [drink]="drink"></app-delivery-port>
+      </div>
+    </div>
+  </div>
+</mat-sidenav-container>

@@ -1,0 +1,33 @@
+<div class="slide-wrapper">
+  <div class="slide-title">Settings</div>
+  <div class="setting-row">
+    <span class="app-toolbar-filter"></span>
+    <!-- <mat-icon class="example-icon">build</mat-icon> -->
+  </div>
+
+  <div class="setting-title">Stocks</div>
+  <div class="setting-row">
+    <form [formGroup]="stockForm" (ngSubmit)="onSubmitStockForm(stockForm.value)" class="delivery-port-form">
+      <span class="app-toolbar-filler"></span>
+      <mat-form-field appearance="fill" *ngFor="let product of products">
+        <mat-label>{{ product.name.toUpperCase() }}</mat-label>
+        <input formControlName="{{ product.name }}" matInput
+          [value]="contentsService.getContentDocument(product).stock?.toString()">
+      </mat-form-field>
+      <button class="delivery-port-button" mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="setting-title">Temperature</div>
+  <div class="setting-row">
+    <form [formGroup]="temperatureForm" (ngSubmit)="onSubmitTemperatureForm(temperatureForm.value)"
+      class="delivery-port-form">
+      <span class="app-toolbar-filler"></span>
+      <mat-form-field appearance="fill">
+        <mat-label>Temperature</mat-label>
+        <input formControlName="temperature" matInput [value]="temperatureRepository.getTemperature()?.toString()">
+      </mat-form-field>
+      <button class="delivery-port-button" mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
