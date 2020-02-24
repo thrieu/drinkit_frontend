@@ -2,7 +2,7 @@
 DrinKit is an app that simulates a drink dispenser. This is the frontend of the app.
 
 ## Requirements
-* Node.js(version^12) with npm
+* Node.js(version ^12) with npm
 * Modern browser
 
 ## Installation and run
